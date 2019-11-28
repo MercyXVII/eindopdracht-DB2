@@ -10,15 +10,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <h1>Add a product</h1>
+    <h1>Add a person</h1>
     <?php require_once("includes/insert.php") ?>
       <div class="text-center">
      <form method="post">
-      <label for="product">Voornaam:</label>
+      <label for="voornaam">Voornaam:</label>
       <input type="text" name="voornaam" autocomplete="off">
-      <label for="prijs">Achternaam:</label>
-      <input type="number" name="Achternaam" autocomplete="off">
-      <label for="locatie">Geboortedatum:</label>
+      <label for="achternaam">Achternaam:</label>
+      <input type="number" name="achternaam" autocomplete="off">
+      <label for="geboortedatum">Geboortedatum:</label>
       <input type="text" name="geboortedatum" autocomplete="off"> <br>
       <input type="submit" name="submit" value="Add person"> <br>
         <a id="button" href="index.php" style="color:red;">Ga terug naar het overzicht</a>

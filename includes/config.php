@@ -1,7 +1,7 @@
 <?php
 
 $servername = "localhost";
-$databasename = "verlanglijstje";
+$databasename = "eindopdracht_b2";
 $username = "Martijn";
 $password = "Welkom1234";
 
