@@ -10,7 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </head>
    <body>
-
+ <!-- code for updating entry -->
     <?php
       error_reporting(0);
       require_once("includes/config.php");
@@ -34,8 +34,8 @@
       <input type="text" name="geboortedatum" autocomplete="off"> <br>
       <input type="submit" name="submit"> <br>
     </form>
-      <a id="button" href="index.php" style="color:red;">Ga terug naar het overzicht</a><br><br>
-      <a id="button" href="addnew.php" style="color:red;">Insert New Person</a>
+      <a id="button" href="index.php" style="color:green;">Ga terug naar het overzicht</a><br><br>
+      <a id="button" href="addnew.php" style="color:green;">Insert New Person</a>
     </div>
 
     <?php

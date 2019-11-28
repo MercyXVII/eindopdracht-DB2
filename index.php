@@ -12,6 +12,7 @@
 
   </head>
   <body>
+    <!-- index for table -->
     <?php
       require("includes/table.php");
     ?>

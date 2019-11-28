@@ -1,5 +1,5 @@
 <?php
-
+//deletes entry
   require_once("includes/config.php");
 
   if(isset($_GET['id'])) {
@@ -15,10 +15,4 @@
     }
 
   }
-
-
-
-
-
-
  ?>

@@ -1,5 +1,4 @@
 <?php
-
 $servername = "localhost";
 $databasename = "eindopdracht_b2";
 $username = "Martijn";

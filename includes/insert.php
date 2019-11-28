@@ -1,5 +1,5 @@
 <?php
-
+//php for adding new person
 
   if (isset($_POST['submit']))
   {
