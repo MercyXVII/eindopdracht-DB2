@@ -29,9 +29,9 @@
       <label for="voornaam">Voornaam:</label>
       <input type="text" name="voornaam" autocomplete="off">
       <label for="achternaam">Achternaam:</label>
-      <input type="number" name="achternaam" autocomplete="off">
+      <input type="text" name="achternaam" autocomplete="off">
       <label for="geboortedatum">Geboortedatum:</label>
-      <input type="text" name="geboortedatum" autocomplete="off"> <br>
+      <input type="date" name="geboortedatum" autocomplete="off"> <br>
       <input type="submit" name="submit"> <br>
     </form>
       <a id="button" href="index.php" style="color:green;">Ga terug naar het overzicht</a><br><br>
