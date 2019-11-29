@@ -45,7 +45,6 @@
       $query = "UPDATE verjaardagen SET voornaam='$voornaam', achternaam='$achternaam', geboortedatum='$geboortedatum' WHERE id='$id'";
 
       if(isset($_POST['submit'])){
-
         $required = ['voornaam', 'achternaam', 'geboortedatum'];
         if(!empty($required)){
           $result = $conn->query($query);
@@ -53,7 +52,6 @@
         } else {
           echo "All fields are required.";
         }
-
       }
 
      ?>

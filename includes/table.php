@@ -1,18 +1,12 @@
 <?php
+  require_once('includes/config.php');
+  include('age.php');
   $sql = "SELECT * FROM verjaardagen";
   $result = $conn->query($sql);
 
-  function ageCalculator($dob){
-      if(!empty($dob)){
-          $birthdate = new DateTime($dob);
-          $today   = new DateTime('today');
-          $age = $birthdate->diff($today)->y;
-          return $age;
-      } else {
-        return 0;
-      }
-    }
-  $dob = '';
+
+$row11 = array('dob'=>'');
+
 
   if ($result->num_rows > 0)
   {
@@ -32,7 +26,7 @@
       echo '<td>'. $row['voornaam'] .'</td>';
       echo '<td>'. $row['achternaam'] .'</td>';
       echo '<td>'. $row['geboortedatum'] .'</td>';
-      echo '<td>' . ageCalculator($dob) . '</td>';
+      echo '<td>'. dateDifference($date_1, $date_2) . '</td>';
       echo '<td> <a href="update.php?id='.$row['id'].'">Edit</a></td>';
       echo '<td> <a href="delete.php?id='.$row['id'].'">Delete</a></td>';
       echo "</tr>";
