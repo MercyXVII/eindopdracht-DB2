@@ -15,7 +15,6 @@
     <!-- index for table -->
     <?php
       require("includes/table.php");
-      //include("includes/age.php");
     ?>
     <br>
     <div class="text-center">
