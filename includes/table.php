@@ -1,12 +1,7 @@
 <?php
   require_once('includes/config.php');
-  include('age.php');
   $sql = "SELECT * FROM verjaardagen";
   $result = $conn->query($sql);
-
-
-$row11 = array('dob'=>'');
-
 
   if ($result->num_rows > 0)
   {
@@ -19,9 +14,26 @@ $row11 = array('dob'=>'');
         <th>Edit</th>
         <th>Delete</th>
       </tr>";
+
     // outputs van elke row
     while ($row = $result->fetch_assoc())
     {
+
+        $date_1 = $row['geboortedatum'];
+        $today = new DateTime();
+        $date_2 = $today->format("Y-m-d");
+
+        function dateDifference($date_1 , $date_2 , $differenceFormat = '%a' )
+        {
+            $datetime1 = date_create($date_1);
+            $datetime2 = date_create($date_2);
+
+            $interval = date_diff($datetime1, $datetime2);
+
+            return $interval->format($differenceFormat);
+        }
+
+
       echo "<tr>";
       echo '<td>'. $row['voornaam'] .'</td>';
       echo '<td>'. $row['achternaam'] .'</td>';
@@ -35,4 +47,6 @@ $row11 = array('dob'=>'');
   } else {
     echo "0 results";
   }
+
+
 ?>
