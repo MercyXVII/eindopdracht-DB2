@@ -3,6 +3,16 @@
   $sql = "SELECT * FROM verjaardagen";
   $result = $conn->query($sql);
 
+  function dateDifference($date_1 , $date_2 , $differenceFormat = '%a' )
+  {
+      $datetime1 = date_create($date_1);
+      $datetime2 = date_create($date_2);
+
+      $interval = date_diff($datetime1, $datetime2);
+
+      return $interval->format($differenceFormat);
+  }
+
   if ($result->num_rows > 0)
   {
     echo "<table>
@@ -21,24 +31,17 @@
 
         $date_1 = $row['geboortedatum'];
         $today = new DateTime();
-        $date_2 = $today->format("Y-m-d");
+        $date_2 = $today->format("Y-m-d
 
-        function dateDifference($date_1 , $date_2 , $differenceFormat = '%a' )
-        {
-            $datetime1 = date_create($date_1);
-            $datetime2 = date_create($date_2);
+        $years = dateDifference($date_1, $date_2) / 365;
 
-            $interval = date_diff($datetime1, $datetime2);
-
-            return $interval->format($differenceFormat);
-        }
 
 
       echo "<tr>";
       echo '<td>'. $row['voornaam'] .'</td>';
       echo '<td>'. $row['achternaam'] .'</td>';
       echo '<td>'. $row['geboortedatum'] .'</td>';
-      echo '<td>'. dateDifference($date_1, $date_2) . '</td>';
+      echo '<td>'. (floor($years)) . '</td>';
       echo '<td> <a href="update.php?id='.$row['id'].'">Edit</a></td>';
       echo '<td> <a href="delete.php?id='.$row['id'].'">Delete</a></td>';
       echo "</tr>";
