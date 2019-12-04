@@ -31,7 +31,8 @@
 
         $date_1 = $row['geboortedatum'];
         $today = new DateTime();
-        $date_2 = $today->format("Y-m-d
+        $date_2 = $today->format("Y-m-d");
+
 
         $years = dateDifference($date_1, $date_2) / 365;
 
