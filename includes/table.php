@@ -3,6 +3,7 @@
   $sql = "SELECT * FROM verjaardagen";
   $result = $conn->query($sql);
 
+  //date difference functie
   function dateDifference($date_1 , $date_2 , $differenceFormat = '%a' )
   {
       $datetime1 = date_create($date_1);
@@ -25,19 +26,17 @@
         <th>Delete</th>
       </tr>";
 
-    // outputs van elke row
+
     while ($row = $result->fetch_assoc())
     {
-
+        //age calculation
         $date_1 = $row['geboortedatum'];
         $today = new DateTime();
         $date_2 = $today->format("Y-m-d");
-
-
         $years = dateDifference($date_1, $date_2) / 365;
 
 
-
+//outputs van elke row
       echo "<tr>";
       echo '<td>'. $row['voornaam'] .'</td>';
       echo '<td>'. $row['achternaam'] .'</td>';
